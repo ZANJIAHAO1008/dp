@@ -1,0 +1,32 @@
+{
+    "presets": [
+        "@vue/cli-plugin-babel/preset",
+        // "@vue/babel-preset-jsx",
+        [
+          "@babel/env",
+          {
+            "targets": {
+              "edge": "17",
+              "firefox": "60",
+              "chrome": "67",
+              "safari": "11.1"
+            },
+            "useBuiltIns": "usage",
+            "corejs": 3
+          }
+        ]
+    ],
+    "plugins": [
+      "@babel/plugin-transform-runtime",
+      ["@babel/plugin-proposal-decorators", { "legacy": true }],
+      ["@babel/plugin-proposal-class-properties", { "loose": true }],
+      ["@babel/plugin-proposal-private-property-in-object", { "loose": true }],
+      ["@babel/plugin-proposal-private-methods", { "loose": true }],
+      [ "import", {
+        "libraryName": "chinaoly-business-vue",
+        "libraryDirectory": "es",
+        "style": true
+      } ]
+    ],
+    "comments": false
+}

@@ -1,0 +1,114 @@
+/* 框架公共样式文件 */
+@import './vars.less';
+@import './reset.less';
+
+/* 通用样式 */
+.fl {
+  float: left !important;
+}
+.fr {
+  float: right !important;
+}
+.clear::after {
+  display: block;
+  clear: both;
+  content: '';
+}
+.hidden {
+  display: none;
+}
+.text-align {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.pointer {
+  cursor: pointer;
+}
+
+/* 去除换行一起的间隙，给父元素加这个属性 */
+.font-size-0 {
+  font-size: 0;
+}
+
+// 宽度自适应
+.flex-width {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+// 高度自适应
+.flex-height {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.flex-item {
+  flex: 1;
+}
+.co-btn + .co-btn {
+  margin-left: 12px;
+}
+
+/* 加载中图片 */
+.co-spin-dot.loading-img {
+  width: 60px;
+  height: 60px;
+}
+
+/* 标题前的竖条 */
+.co-title-line-V {
+  position: relative;
+  padding-left: 20px;
+  font-size: 14px;
+  color: #333;
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    width: 4px;
+    height: 20px;
+    content: '';
+    background: @primary-color;
+    transform: translate(0, -50%);
+  }
+}
+
+/* 帮助图标样式 */
+.question-tip {
+  cursor: pointer;
+
+  &:hover {
+    color: @primary-color;
+  }
+}
+
+/* 页面布局样式 */
+.operation-container {
+  .text-right;
+
+  margin-bottom: 24px;
+}
+
+.line-gray {
+  height: 0;
+  border-bottom: 2px solid #dcdcdc;
+}
+
+.box-shadow {
+  box-shadow: -2px 0 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+.notwrap {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: keep-all;
+  white-space: nowrap;
+}
+
+@import './custom.less';

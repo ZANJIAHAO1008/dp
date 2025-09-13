@@ -1,0 +1,60 @@
+/* reset */
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+/* 去除谷歌浏览器给表单默认填充的样式 */
+
+input::-webkit-input-placeholder {
+  color: #d1d1d1;
+  opacity: 1;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+  -webkit-text-fill-color: #333;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  color: rgb(0, 0, 0);
+  background-color: rgb(250, 255, 189);
+
+  /* #FAFFBD; */
+  background-image: none;
+}
+
+input:-ms-input-placeholder {
+  color: #d1d1d1;
+  opacity: 1;
+}
+
+input:-webkit-autofill:hover {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+  -webkit-text-fill-color: #333;
+}
+
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+  -webkit-text-fill-color: #333;
+}
+
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #d1d1d1;
+  opacity: 1;
+}
+
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #d1d1d1;
+  opacity: 1;
+}

@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "jsx": "preserve",
+        "experimentalDecorators": true,
+        "paths": {
+            "@/*": ["./src/*"]
+        }
+    },
+    "vueCompilerOptions": {
+        "target": 2
+    }
+}

@@ -1,0 +1,55 @@
+@keyframes pkiImg {
+  0% {
+    left: -50px;
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    left: 50%;
+    opacity: 0.2;
+  }
+}
+
+.login {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/login/login_bg.jpg');
+  background-position: center;
+  background-size: cover;
+
+  .login-con {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    width: 300px;
+    margin-right: -150px;
+    transform: translateY(-60%);
+  }
+
+  .captcha {
+    img {
+      width: 100px;
+      height: 30px;
+    }
+  }
+
+  .pkiImg {
+    position: relative;
+    width: 100%;
+    height: 190px;
+    padding-top: 30px;
+    margin: 0 auto;
+    cursor: pointer;
+
+    img {
+      position: absolute;
+      top: 50px;
+      animation: pkiImg 4s infinite;
+    }
+  }
+}
