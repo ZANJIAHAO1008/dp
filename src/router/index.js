@@ -27,7 +27,7 @@ function addRoutes(ls) {
 }
 
 // 无需登录的页面
-const allowList = ['login', 'bigScreen'];
+const allowList = ['login'];
 
 router.beforeEach((to, from, next) => {
   delay(
@@ -38,17 +38,16 @@ router.beforeEach((to, from, next) => {
       } = to;
       if (token) {
         // url上带token
-        // await rewriteToken(token, user);
+        await rewriteToken(token, user);
       }
       // 刷新页面时，验证远端是否存在token和user，存在则更新本地token和user，不存在会自动删除本地token和user
-      // const myToken = await verifySet();
-      const myToken = false;
+      const myToken = await verifySet();
       if (myToken) {
         // 已登录
-        // UserModule.IS_LOGIN(true);
+        UserModule.IS_LOGIN(true);
         if (to.name === 'login') {
           // 前往的页面是登录页
-          // AppModule.gotoHome(); // 跳转首页
+          AppModule.gotoHome(); // 跳转首页
           return;
         } else {
           if (AppModule.menuLoaded) {
@@ -58,26 +57,25 @@ router.beforeEach((to, from, next) => {
               next();
             }
           } else {
-            // AppModule.getMenuList()
-            //   .then(addRoutes)
-            //   .finally(() => {
-            //     next({ ...to, query });
-            //   });
+            AppModule.getMenuList()
+              .then(addRoutes)
+              .finally(() => {
+                next({ ...to, query });
+              });
           }
         }
       } else {
         // 未登录
-        next();
-        // if (allowList.includes(to.name)) {
-        //   next();
-        // } else {
-        //   UserModule.gotoLogin({ query }).finally(() => {
-        //     next();
-        //   }); // 跳转到统一登录页
-        // }
+        if (allowList.includes(to.name)) {
+          next();
+        } else {
+          UserModule.gotoLogin({ query }).finally(() => {
+            next();
+          }); // 跳转到统一登录页
+        }
       }
     },
-    () => !window.configOut.setCookieUrl || window.SetToken || true
+    () => !window.configOut.setCookieUrl || window.SetToken
   ); // 未配置setCookieUrl 或 SetToken未初始化完成
 });
 
