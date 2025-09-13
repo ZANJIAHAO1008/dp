@@ -16,7 +16,9 @@
       <div class="tipBox">
         <co-image
           style="width: 100px; height: 120px"
-          :src="`http://172.27.0.21:8585/get/ckImg/${personInfo ? (personInfo.djgzrySfzh || personInfo.hdxxSfzh || '') : ''}.jpg`"
+          :src="`http://172.27.0.21:8585/get/ckImg/${
+            personInfo ? personInfo.djgzrySfzh || personInfo.hdxxSfzh || '' : ''
+          }.jpg`"
           fit="fill"
         >
           <div slot="error" class="co-image__error">
@@ -37,7 +39,9 @@
           </div>
           <div class="msgList">
             <span class="label">性别：</span>
-            <span class="value" :title="getSafeProperty(personInfo, 'djgzryXb')">{{ getSafeProperty(personInfo, 'djgzryXb') }}</span>
+            <span class="value" :title="getSafeProperty(personInfo, 'djgzryXb')">{{
+              getSafeProperty(personInfo, 'djgzryXb')
+            }}</span>
           </div>
           <div class="msgList">
             <span class="label">身份证号：</span>
@@ -68,7 +72,9 @@
           </div>
           <div class="msgList">
             <span class="label">控制级别：</span>
-            <span class="value" :title="getSafeProperty(personInfo, 'djgzryKzjb')">{{ getSafeProperty(personInfo, 'djgzryKzjb') }}</span>
+            <span class="value" :title="getSafeProperty(personInfo, 'djgzryKzjb')">{{
+              getSafeProperty(personInfo, 'djgzryKzjb')
+            }}</span>
           </div>
           <div class="msgList">
             <span class="label">当前地址：</span>
@@ -95,7 +101,10 @@
       </div>
       <div class="personInfo-modal-info">
         <div class="img-box">
-          <img :src="`http://172.27.0.21:8585/get/ckImg/${getSafeProperty(personInfo, 'djgzrySfzh')}.jpg`" alt="加载失败" />
+          <img
+            :src="`http://172.27.0.21:8585/get/ckImg/${getSafeProperty(personInfo, 'djgzrySfzh')}.jpg`"
+            alt="加载失败"
+          />
           <div class="ryda-btn" @click="routeToDa(personInfo)">人员档案</div>
         </div>
 
@@ -112,7 +121,9 @@
           </div>
           <div class="msgList">
             <span class="label">性别：</span>
-            <span class="value" :title="getSafeProperty(personInfo, 'djgzryXb')">{{ getSafeProperty(personInfo, 'djgzryXb') }}</span>
+            <span class="value" :title="getSafeProperty(personInfo, 'djgzryXb')">{{
+              getSafeProperty(personInfo, 'djgzryXb')
+            }}</span>
           </div>
           <div class="msgList">
             <span class="label">身份证号：</span>
@@ -143,7 +154,9 @@
           </div>
           <div class="msgList">
             <span class="label">控制级别：</span>
-            <span class="value" :title="getSafeProperty(personInfo, 'djgzryKzjb')">{{ getSafeProperty(personInfo, 'djgzryKzjb') }}</span>
+            <span class="value" :title="getSafeProperty(personInfo, 'djgzryKzjb')">{{
+              getSafeProperty(personInfo, 'djgzryKzjb')
+            }}</span>
           </div>
           <div class="msgList">
             <span class="label">当前地址：</span>

@@ -4,7 +4,7 @@
       ><span class="title-gradient">{{ title }}</span></span
     >
     <Select
-     v-if="isSelect"
+      v-if="isSelect"
       v-model="select"
       @on-change="handleChange"
       size="small"
@@ -18,31 +18,30 @@
 export default {
   name: 'dpTitle',
   props: {
-    title:{
-      type:String,
-      default:''
+    title: {
+      type: String,
+      default: '',
     },
-    isSelect:{
-      type:Boolean,
-      default:true
+    isSelect: {
+      type: Boolean,
+      default: true,
     },
-    dateList:{
-      type:Array,
-      default:(()=>[
+    dateList: {
+      type: Array,
+      default: () => [
         { title: '近24小时', value: '9' },
         { title: '近7天', value: '8' },
         { title: '近30天', value: '7' },
         { title: '近1年', value: '6' },
-      ])
+      ],
     },
-     select:{
-      type:String,
-      default:'9'
+    select: {
+      type: String,
+      default: '9',
     },
   },
   data() {
-    return {
-    };
+    return {};
   },
   methods: {
     handleChange(e) {
@@ -62,5 +61,28 @@ export default {
 }
 .ivu-select-selection {
   border: 1px solid #75deef;
+}
+
+// DatePicker样式，与Select small保持一致
+.ivu-date-picker .ivu-input {
+  background: #1a3c58;
+  border: 1px solid #75deef;
+  color: #75deef;
+}
+.ivu-date-picker .ivu-input::-webkit-input-placeholder {
+  color: #75deef;
+}
+.ivu-date-picker .ivu-input::-moz-placeholder {
+  color: #75deef;
+}
+.ivu-date-picker .ivu-input:-ms-input-placeholder {
+  color: #75deef;
+}
+.ivu-date-picker .ivu-input::placeholder {
+  color: #75deef;
+}
+.ivu-date-picker .ivu-input:focus {
+  border-color: #75deef;
+  box-shadow: 0 0 0 2px rgba(117, 222, 239, 0.2);
 }
 </style>

@@ -133,6 +133,28 @@
         </div>
       </Col>
     </Row>
+    <Row class="listBottom" style="margin-top: 20px;">
+      <Col span="12">
+        <div class="content">
+          <dpTitle title="车辆预警统计" :isSelect="false"></dpTitle>
+          <span class="angle1"></span>
+          <span class="angle2"></span>
+          <span class="angle3"></span>
+          <span class="angle4"></span>
+          <clyj ref="clyj"></clyj>
+        </div>
+      </Col>
+      <Col span="12">
+        <div class="content">
+          <dpTitle title="籍贯统计" :isSelect="false"></dpTitle>
+          <span class="angle1"></span>
+          <span class="angle2"></span>
+          <span class="angle3"></span>
+          <span class="angle4"></span>
+          <jgtj ref="jgtj"></jgtj>
+        </div>
+      </Col>
+    </Row>
   </div>
 </template>
 
@@ -157,6 +179,8 @@ const center = () => import('./components/center');
 const dbrw = () => import('./components/dbrw.vue');
 const nnbl = () => import('./components/components/nlxb/nnbl.vue');
 const nlbl = () => import('./components/components/nlxb/nlbl.vue');
+const clyj = () => import('./components/clyj.vue');
+const jgtj = () => import('./components/jgtj.vue');
 import dpTitle from '@/components/dpTitle';
 export default {
   name: 'bigScreen',
@@ -184,6 +208,8 @@ export default {
     Qblrcz,
     sczclc,
     Jhlrlc,
+    clyj, // 车辆预警
+    jgtj, // 籍贯统计
     dpTitle,
   },
   computed: {

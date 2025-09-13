@@ -106,5 +106,15 @@ export const getZdryListApi= params => {
 
 // 获取待办事项
 export const getTask = ({} = {}) => {
-  return ajaxApi('get',  '/api/fkmgr/clgl/getList/taskAll', {}, { rowData: true });
+  return ajaxApi('get', '/api/fkmgr/clgl/getList/taskAll', {}, { rowData: true });
+};
+
+// 车辆预警统计
+export const getClyjApi = (params = {}) => {
+  return ajaxApi('get', bigScreenUrl + '/gzry/gbase/clyj/count', params);
+};
+
+// 籍贯统计
+export const getJgtjApi = (params = {}) => {
+  return ajaxApi('get', bigScreenUrl + '/gzry/gbase/gzry/jg', params);
 };

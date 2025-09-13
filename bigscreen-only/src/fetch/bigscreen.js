@@ -1,6 +1,5 @@
 import { ajaxApi, bigScreenUrl, ajaxJson, ajaxForm } from './api';
 
-
 // 根据行政编码查看重点目标
 export const getZdmbApi = (params = {}) => {
   return ajaxApi('post', bigScreenUrl + '/ffyj/ffmb/page', params);
@@ -61,8 +60,6 @@ export const getQsListApi = (params = {}) => {
   return ajaxApi('get', bigScreenUrl + '/hdxx/lrlc/kqsx', params);
 };
 
-
-
 // 流入流出统计
 export const lrlcQstApi = (params = {}) => {
   return ajaxApi('get', bigScreenUrl + '/hdxx/lrlc/qst', params);
@@ -72,7 +69,6 @@ export const lrlcQstApi = (params = {}) => {
 export const jhlrlcApi = (params = {}) => {
   return ajaxApi('get', bigScreenUrl + '/gzry/gbase/jhjcly/count', params);
 };
-
 
 // 流入流出统计
 export const sczclcApi = (params = {}) => {
@@ -90,21 +86,31 @@ export const getQbApi = (params = {}) => {
 };
 
 // 流入流出交通工具统计
-export const getLrlcJtApi= params => {
-  return ajaxApi('get', bigScreenUrl + '/hdxx/lrlc/type',params);
+export const getLrlcJtApi = params => {
+  return ajaxApi('get', bigScreenUrl + '/hdxx/lrlc/type', params);
 };
 
 // 登记车辆分类
-export const getDjclApi= params => {
-  return ajaxApi('get', bigScreenUrl + '/clgl/clfl',params);
+export const getDjclApi = params => {
+  return ajaxApi('get', bigScreenUrl + '/clgl/clfl', params);
 };
 
 // 登记车辆分类
-export const getZdryListApi= params => {
-  return ajaxApi('get', bigScreenUrl + '/jjry/zdry',params);
+export const getZdryListApi = params => {
+  return ajaxApi('get', bigScreenUrl + '/jjry/zdry', params);
 };
 
 // 获取待办事项
 export const getTask = ({} = {}) => {
-  return ajaxApi('get',  '/api/fkmgr/clgl/getList/taskAll', {}, { rowData: true });
+  return ajaxApi('get', '/api/fkmgr/clgl/getList/taskAll', {}, { rowData: true });
+};
+
+// 车辆预警统计
+export const getClyjApi = (params = {}) => {
+  return ajaxApi('get', bigScreenUrl + '/gzry/gbase/clyj/count', params);
+};
+
+// 籍贯统计
+export const getJgtjApi = (params = {}) => {
+  return ajaxApi('get', bigScreenUrl + '/gzry/gbase/gzry/jg', params);
 };

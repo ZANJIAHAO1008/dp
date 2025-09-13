@@ -68,7 +68,7 @@
     <Row class="listBottom">
       <Col span="9">
         <div class="content">
-          <dpTitle  @changeDate="changeDateHczl" title="核查指令统计"></dpTitle>
+          <dpTitle @changeDate="changeDateHczl" title="核查指令统计"></dpTitle>
           <span class="angle1"></span>
           <span class="angle2"></span>
           <span class="angle3"></span>
@@ -91,14 +91,13 @@
       </Col>
       <Col span="4">
         <div class="content">
-          <dpTitle title="交通情况" :isSelect="false"></dpTitle>
+          <dpTitle title="车辆预警" :isSelect="false"></dpTitle>
           <span class="angle1"></span>
           <span class="angle2"></span>
           <span class="angle3"></span>
           <span class="angle4"></span>
           <div class="behavior">
-            <djChart style="height: 52%" :select-range-date="selectRangeDate" :config="configData9"></djChart>
-            <slChart style="height: 45%" :select-range-date="selectRangeDate" :config="configData9"></slChart>
+            <ClyjChart style="height: 100%"></ClyjChart>
           </div>
           <!-- <div class="behavior">
             <djChart style="height: 55%" :select-range-date="selectRangeDate" :config="configData9"></djChart>
@@ -113,15 +112,13 @@
           <span class="angle2"></span>
           <span class="angle3"></span>
           <span class="angle4"></span>
-          <dpTitle title="人员年龄/性别统计" :isSelect="false"></dpTitle>
-          <!-- <chart8 ref="chart16"></chart8> -->
-          <nnbl style="height: 52%"></nnbl>
-          <nlbl style="height: 45%"></nlbl>
+          <dpTitle title="籍贯统计" :isSelect="false"></dpTitle>
+          <JgtjChart style="height: 100%"></JgtjChart>
         </div>
       </Col>
       <Col span="7">
         <div class="content">
-          <dpTitle title="计划流入流出"  :isSelect="false"  @changeDate="changeDateJhlrlc"></dpTitle>
+          <dpTitle title="计划流入流出" :isSelect="false" @changeDate="changeDateJhlrlc"></dpTitle>
           <span class="angle1"></span>
           <span class="angle2"></span>
           <span class="angle3"></span>
@@ -141,6 +138,8 @@ import Jhlrlc from './components/jhlrlc.vue';
 import Qblrcz from './components/qblrcz.vue';
 import slChart from './components/sl';
 import djChart from './components/djclfl';
+import ClyjChart from './components/clyj.vue';
+import JgtjChart from './components/jgtj.vue';
 const sczclc = () => import('./components/sczclc.vue');
 const lrlctj = () => import('./components/lrlctj');
 const chart2 = () => import('./components/chart2');
@@ -166,6 +165,8 @@ export default {
   components: {
     slChart,
     djChart,
+    ClyjChart, // 车辆预警
+    JgtjChart, // 籍贯统计
     dbrw, //待办任务
     lrlctj, // 流入流出统计
     nnbl,
